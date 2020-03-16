@@ -10,18 +10,22 @@ namespace Gaus_solver
     {
         //Gaus solver v1.0 by Yordan Yordanov, March 2020
         //Linear equations system solver
-
+        private string[] strArrEn = { "Enter the unknowns count: ", "Very few unknowns!", "Too many unknowns!", "Wrong input format!", "No solution for one or more of the unknowns!" };
+        private string[] strArrBg = { "Въведете брой неизвестни: ", "Прекалено малко неизвестни!", "Прекалено много неизвестни!", "Грешен формат на входните данни!", "Няма решение за едно или повече от неизвестните!" };
         private readonly int maxUnknowns = 50;
         private readonly int endChar = 122;
+        private double[,] matrix;
         private int rows = -1;
         private int cols = -1;
-        private double[,] matrix;
+        private int lang = 0;
 
         private Display console;
 
-        public Solver()
+        public Solver(int lang)
         {
             console = new Display();
+            console.Lang = lang;
+            this.lang = lang;
         }
         
         public string Run()
@@ -35,8 +39,7 @@ namespace Gaus_solver
         private void RunUntilDone(Func<bool> myMethod)
         {
             bool a = true;
-            while (a)
-            {
+            while (a){
                 a = !myMethod();
             }
         }
@@ -44,21 +47,21 @@ namespace Gaus_solver
         private bool InitMatrix()
         {
             int rows = 0;
-            Console.Write("Entern the unknowns count: ");
+            Console.Write(langStr(0, lang));
             try{
                 rows = int.Parse(Console.ReadLine());
                 if(rows < 2){
-                    Console.WriteLine("Very few unknowns!");
+                    Console.WriteLine(langStr(1, lang));
                     return false;
                 } 
                 else if(rows > maxUnknowns)
                 {
-                    Console.WriteLine("Too many unknowns!");
+                    Console.WriteLine(langStr(2, lang));
                     return false;
                 }
             }
             catch{
-                Console.WriteLine("Wrong input format!");
+                Console.WriteLine(langStr(3, lang));
                 return false;
             }
             
@@ -74,7 +77,10 @@ namespace Gaus_solver
             try{
                 for (int i = 0; i < rows; i++)
                 {
-                    Console.WriteLine($"Enter row {i + 1}:");
+                    if(lang == 0)
+                        Console.WriteLine($"Enter row {i + 1}:");
+                    else if(lang == 1)
+                        Console.WriteLine($"Въведете ред {i + 1}:");
 
                     string[] line = Console.ReadLine().Split(' ').ToArray();
                     for (int y = 0; y < line.Count(); y++)
@@ -84,11 +90,12 @@ namespace Gaus_solver
                 }
             }
             catch{
-                console.ClearAndPrintProgramInfo();
-                Console.WriteLine("Wrong input format!");
+                console.PrintProgramInfo(true);
+                Console.WriteLine(langStr(3, lang));
                 return false;
             }
-            
+            Console.WriteLine();
+
             return true;
         }
 
@@ -101,7 +108,7 @@ namespace Gaus_solver
                 {
                     bool res = NotNullDiagLineSwap(currentStage);
                     if (!res)
-                        return "No solution for one or more of the unknowns!";
+                        return langStr(4, lang);
                 }
 
                 double diagNum = matrix[currentStage, currentStage]; //make diagonal of 1s
@@ -142,7 +149,7 @@ namespace Gaus_solver
             {
                 result += $"{(char)(endChar - lng + 1 + i)}={unknowns[i]}, ";
             }
-            result = result.Substring(0, result.Length - 1);
+            result = result.Substring(0, result.Length - 2);
             return result;
         }
 
@@ -188,6 +195,18 @@ namespace Gaus_solver
             {
                 matrix[line1, i] = matrix[line1, i] - (matrix[line2, i] * multiplyer);
             }
+        }
+
+        private string langStr(int num, int lang)
+        {
+            string[] langData = new string[6];
+
+            if (lang == 0)
+                langData = strArrEn;
+            else if (lang == 1)
+                langData = strArrBg;
+
+            return langData[num];
         }
     }
 }

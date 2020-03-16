@@ -13,10 +13,12 @@ namespace Gaus_solver
 
         Display console;
         bool run = true;
+        int lang = 0;
 
         public MainController()
         {
             console = new Display();
+            console.Lang = 0;
         }
 
         public void Run()
@@ -51,15 +53,25 @@ namespace Gaus_solver
             switch (command.ToLower())
             {
                 case "q":
-                    result = "Exitting application!";
+                    if(lang == 0)
+                        result = "Exitting application!";
+                    else if(lang == 1)
+                        result = "Излизане от приложението!";
                     run = false;
                     break;
                 case "1":
-                    Solver gaus = new Solver();
+                    Solver gaus = new Solver(lang);
                     result = gaus.Run();
                     break;
+                case "2":
+                    lang = lang ^ 1;
+                    console.Lang = console.Lang ^ 1;
+                    break;
                 default:
-                    result = "Unknown command!";
+                    if (lang == 0)
+                        result = "Unknown command!";
+                    else if (lang == 1)
+                        result = "Неизвестна команда!";
                     break;
             }
 

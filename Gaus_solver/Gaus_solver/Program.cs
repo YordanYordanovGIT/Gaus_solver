@@ -10,6 +10,7 @@ namespace Gaus_solver
     {
         static void Main(string[] args)
         {
+            Console.OutputEncoding = Encoding.UTF8;
             MainController mc = new MainController();
             mc.Run();
         }
