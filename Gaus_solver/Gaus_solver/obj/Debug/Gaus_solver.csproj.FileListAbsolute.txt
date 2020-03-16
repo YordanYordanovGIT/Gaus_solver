@@ -1,0 +1,7 @@
+C:\Users\Yordan\source\repos\Gaus_solver\Gaus_solver\bin\Debug\Gaus_solver.exe.config
+C:\Users\Yordan\source\repos\Gaus_solver\Gaus_solver\bin\Debug\Gaus_solver.exe
+C:\Users\Yordan\source\repos\Gaus_solver\Gaus_solver\bin\Debug\Gaus_solver.pdb
+C:\Users\Yordan\source\repos\Gaus_solver\Gaus_solver\obj\Debug\Gaus_solver.csprojAssemblyReference.cache
+C:\Users\Yordan\source\repos\Gaus_solver\Gaus_solver\obj\Debug\Gaus_solver.csproj.CoreCompileInputs.cache
+C:\Users\Yordan\source\repos\Gaus_solver\Gaus_solver\obj\Debug\Gaus_solver.exe
+C:\Users\Yordan\source\repos\Gaus_solver\Gaus_solver\obj\Debug\Gaus_solver.pdb
