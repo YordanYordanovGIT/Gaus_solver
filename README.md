@@ -1,2 +1,2 @@
 # Gaus_solver
-Lenear equations system calculator
+Linear equations system calculator
