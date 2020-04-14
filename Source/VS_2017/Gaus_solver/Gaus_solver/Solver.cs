@@ -147,7 +147,7 @@ namespace Gaus_solver
             int lng = unknowns.Length;
             for (int i = 0; i < lng; i++)
             {
-                result += $"{(char)(endChar - lng + 1 + i)}={unknowns[i]}, ";
+                result += $"{(char)(endChar - lng + 1 + i)}={Math.Round(unknowns[i]),3}, ";
             }
             result = result.Substring(0, result.Length - 2);
             return result;

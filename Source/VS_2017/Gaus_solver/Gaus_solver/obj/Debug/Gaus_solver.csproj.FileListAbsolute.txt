@@ -12,3 +12,10 @@ C:\Github\Gaus_solver\Gaus_solver\Gaus_solver\obj\Debug\Gaus_solver.pdb
 C:\Github\Gaus_solver\Gaus_solver\Gaus_solver\bin\Debug\Gaus_solver.exe.config
 C:\Github\Gaus_solver\Gaus_solver\Gaus_solver\bin\Debug\Gaus_solver.exe
 C:\Github\Gaus_solver\Gaus_solver\Gaus_solver\bin\Debug\Gaus_solver.pdb
+C:\Github\Gaus_solver\Source\VS_2017\Gaus_solver\Gaus_solver\bin\Debug\Gaus_solver.exe.config
+C:\Github\Gaus_solver\Source\VS_2017\Gaus_solver\Gaus_solver\bin\Debug\Gaus_solver.exe
+C:\Github\Gaus_solver\Source\VS_2017\Gaus_solver\Gaus_solver\bin\Debug\Gaus_solver.pdb
+C:\Github\Gaus_solver\Source\VS_2017\Gaus_solver\Gaus_solver\obj\Debug\Gaus_solver.csprojAssemblyReference.cache
+C:\Github\Gaus_solver\Source\VS_2017\Gaus_solver\Gaus_solver\obj\Debug\Gaus_solver.csproj.CoreCompileInputs.cache
+C:\Github\Gaus_solver\Source\VS_2017\Gaus_solver\Gaus_solver\obj\Debug\Gaus_solver.exe
+C:\Github\Gaus_solver\Source\VS_2017\Gaus_solver\Gaus_solver\obj\Debug\Gaus_solver.pdb
